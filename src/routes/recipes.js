@@ -60,11 +60,25 @@ const RecipeRoutes = function(app)
 
         // finding and updating the task 
         app.put('/recipes/:id', (req,res) => {
-
+            console.log('inside the node')
+            console.log('name', req.body.name)
+            console.log('ingredients', req.body.ingredients)
+           
+           Recipes.findOneAndUpdate({_id: req.params.id}, {
+               $set: {
+                   name: req.body.name,
+                   ingredients: req.body.ingredients
+               }
+           }).then((result) => {
+               res.json(result);
+           })
+            
         });
 
 
-        app.get('/tasks/:id' , (req,res) => {
+        app.get('/recipes/:id' , (req,res) => {
+
+            console.log(req.params.id);
             
             Recipes.findById({_id: req.params.id})
             .then((result) => {
@@ -73,7 +87,11 @@ const RecipeRoutes = function(app)
             .catch((err)=> {
                 res.json(err);
             })
-        })    
+        })  
+        
+        app.put('/updateRecipies', (req,res) => {
+            
+        })
 }
 
 module.exports = RecipeRoutes;
