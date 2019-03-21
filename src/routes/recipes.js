@@ -9,15 +9,16 @@ const RecipeRoutes = function(app)
             res.send('<h1>It is working fine</h1>')
         })
 
+
         app.post('/recipes' , (req,res) => {
             // res.json('working fine')
+
+            console.log(req.body);
 
             var new_recipe = new Recipes({
                 name: req.body.name,
                 ingredients: []
             })
-
-            new_recipe.ingredients.push(req.body.ingredient)
 
             // res.json(new_task);
             new_recipe.save()
