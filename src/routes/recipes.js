@@ -4,11 +4,6 @@ var Recipes= require('../models/recipes');
 const RecipeRoutes = function(app)
 {
         // adding the static middle ware 
-        
-        app.get('/', (req,res) => {
-            res.send('<h1>It is working fine</h1>')
-        })
-
 
         app.post('/recipes' , (req,res) => {
             // res.json('working fine')
@@ -55,6 +50,7 @@ const RecipeRoutes = function(app)
             })
             .catch((err) => {
                 res.json(err);
+                
             })
         });
 
@@ -86,6 +82,7 @@ const RecipeRoutes = function(app)
                 res.json(result);
             })
             .catch((err)=> {
+                console.log('cast error',err);
                 res.json(err);
             })
         })  
