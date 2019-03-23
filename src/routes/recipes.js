@@ -5,6 +5,9 @@ const RecipeRoutes = function(app)
 {
         // adding the static middle ware 
 
+        app.get('/check', (req,res) => {
+            res.send('Food Recipe App');
+        })
         app.post('/recipes' , (req,res) => {
             // res.json('working fine')
 

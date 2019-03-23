@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 let DB;
 
 const connection = () => {
-    const url = "mongodb://localhost/tushar";
+    const url = "mongodb+srv://techbun:techbun@apkacompany-inq9r.mongodb.net/test?retryWrites=true";
     mongoose.connect(url, {useNewUrlParser:true})
     .then((client) => {
         if(client) {
