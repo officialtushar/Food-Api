@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 
 
 let corsOptions = {
-    origin: 'http://ec2-3-88-164-91.compute-1.amazonaws.com:3000',
+    origin: 'http://ec2-3-88-164-91.compute-1.amazonaws.com',
     optionsSuccessStatus: 200
 }
 
